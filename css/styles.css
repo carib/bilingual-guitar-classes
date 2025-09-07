@@ -105,6 +105,46 @@ body {
     transition: 0.3s;
 }
 
+/* Language Toggle */
+.language-toggle {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 2rem;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 2px solid #3498db;
+    color: #3498db;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 40px;
+}
+
+.lang-btn:hover {
+    background: #3498db;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.lang-btn.active {
+    background: #3498db;
+    color: white;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.lang-btn:not(.active) {
+    opacity: 0.7;
+}
+
+.lang-btn:not(.active):hover {
+    opacity: 1;
+}
+
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -545,6 +585,14 @@ body {
     align-items: start;
 }
 
+.about-content-single {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .language-column {
     display: flex;
     flex-direction: column;
@@ -771,6 +819,17 @@ body {
         left: 0;
     }
 
+    .language-toggle {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .lang-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        min-width: 35px;
+    }
+
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
@@ -919,6 +978,11 @@ html {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: start;
+}
+
+.tuner-interface {
+    margin-top: 0;
+    align-self: start;
 }
 
 .instructions-text h3 {
@@ -1423,6 +1487,15 @@ html {
 .precision-line-right-bottom .label {
     right: 0;
 }
+
+/* Spanish language adjustments for tuner diagram labels */
+[lang="es"] .precision-line-left .label {
+    left: -4.2em !important;
+}
+
+[lang="es"] .precision-line-right-top .label {
+    right: -5.2em !important;
+}
 @media (max-width: 900px) {
     .tuner-diagram-wrapper {
         flex-direction: column;
@@ -1465,6 +1538,15 @@ html {
     }
     .precision-line-right-top .label {
         right: -2.7em;
+    }
+    
+    /* Spanish adjustments for mobile */
+    [lang="es"] .precision-line-left .label {
+        left: -3.7em !important;
+    }
+    
+    [lang="es"] .precision-line-right-top .label {
+        right: -4.9em !important;
     }
     .precision-line-right-bottom {
         top: calc(70% + 1em);
@@ -1536,6 +1618,15 @@ html {
     .precision-line-right-bottom .label {
         font-size: 0.7rem;
     }
+    
+    /* Spanish adjustments for small mobile */
+    [lang="es"] .precision-line-left .label {
+        left: -3em !important;
+    }
+    
+    [lang="es"] .precision-line-right-top .label {
+        right: -4em !important;
+    }
     .tuner-diagram-list {
         font-size: 1rem;
     }
@@ -1547,6 +1638,26 @@ html {
     background: #f8f9fa;
     position: relative;
     min-height: 80vh;
+}
+
+.tuner-start-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.start-tuning-btn {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.tuner-instruction {
+    color: #666;
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.5;
 }
 
 .tuner-interface {

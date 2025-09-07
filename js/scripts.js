@@ -1,3 +1,83 @@
+// Language System
+class LanguageManager {
+    constructor() {
+        this.currentLang = localStorage.getItem('selectedLanguage') || 'en';
+        this.init();
+    }
+
+    init() {
+        this.setupLanguageToggle();
+        this.setLanguage(this.currentLang);
+    }
+
+    setupLanguageToggle() {
+        const langButtons = document.querySelectorAll('.lang-btn');
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const lang = e.target.getAttribute('data-lang');
+                this.setLanguage(lang);
+            });
+        });
+    }
+
+    setLanguage(lang) {
+        this.currentLang = lang;
+        localStorage.setItem('selectedLanguage', lang);
+        
+        // Update language toggle buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-lang') === lang) {
+                btn.classList.add('active');
+            }
+        });
+
+        // Update all elements with language data attributes
+        document.querySelectorAll('[data-lang-en], [data-lang-es]').forEach(element => {
+            const text = element.getAttribute(`data-lang-${lang}`);
+            if (text) {
+                // Handle different element types
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.placeholder = text;
+                } else if (element.tagName === 'OPTION') {
+                    element.textContent = text;
+                } else {
+                    element.textContent = text;
+                }
+            }
+        });
+
+        // Update page title and meta description if they exist
+        const titleElement = document.querySelector('title');
+        if (titleElement) {
+            const titleEn = titleElement.getAttribute('data-lang-en');
+            const titleEs = titleElement.getAttribute('data-lang-es');
+            if (titleEn && titleEs) {
+                titleElement.textContent = lang === 'es' ? titleEs : titleEn;
+            }
+        }
+
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) {
+            const descEn = metaDesc.getAttribute('data-lang-en');
+            const descEs = metaDesc.getAttribute('data-lang-es');
+            if (descEn && descEs) {
+                metaDesc.setAttribute('content', lang === 'es' ? descEs : descEn);
+            }
+        }
+
+        // Update HTML lang attribute
+        document.documentElement.lang = lang;
+    }
+
+    getCurrentLanguage() {
+        return this.currentLang;
+    }
+}
+
+// Initialize language manager
+const languageManager = new LanguageManager();
+
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');

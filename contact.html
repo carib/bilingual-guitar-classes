@@ -19,21 +19,25 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html" class="nav-link" data-lang-en="Home" data-lang-es="Inicio">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="program.html" class="nav-link">Program</a>
+                    <a href="program.html" class="nav-link" data-lang-en="Program" data-lang-es="Programa">Program</a>
                 </li>
                 <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
+                    <a href="about.html" class="nav-link" data-lang-en="About" data-lang-es="Acerca de">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="tuner.html" class="nav-link">Tuner</a>
+                    <a href="tuner.html" class="nav-link" data-lang-en="Tuner" data-lang-es="Afinador">Tuner</a>
                 </li>
                 <li class="nav-item">
-                    <a href="contact.html" class="nav-link active">Contact</a>
+                    <a href="contact.html" class="nav-link active" data-lang-en="Contact" data-lang-es="Contacto">Contact</a>
                 </li>
             </ul>
+            <div class="language-toggle">
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="es">ES</button>
+            </div>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -45,8 +49,7 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Contact Us</h1>
-            <h2>Contáctenos</h2>
+            <h1 data-lang-en="Contact Us" data-lang-es="Contáctenos">Contact Us</h1>
         </div>
     </section>
 
@@ -55,62 +58,62 @@
         <div class="container">
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
+                    <h3 data-lang-en="Contact Information" data-lang-es="Información de Contacto">Contact Information</h3>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h4>Address</h4>
+                            <h4 data-lang-en="Address" data-lang-es="Dirección">Address</h4>
                             <p>Stepbridge Studios<br>123 Music Lane<br>Recording City, RC 12345</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <h4>Phone</h4>
+                            <h4 data-lang-en="Phone" data-lang-es="Teléfono">Phone</h4>
                             <p>(555) 123-4567</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h4>Email</h4>
+                            <h4 data-lang-en="Email" data-lang-es="Correo Electrónico">Email</h4>
                             <p>info@gtr.stepbridge.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-clock"></i>
                         <div>
-                            <h4>Hours</h4>
-                            <p>Monday - Friday: 9:00 AM - 9:00 PM<br>Saturday: 10:00 AM - 6:00 PM<br>Sunday: Closed</p>
+                            <h4 data-lang-en="Hours" data-lang-es="Horarios">Hours</h4>
+                            <p data-lang-en="Monday - Friday: 9:00 AM - 9:00 PM<br>Saturday: 10:00 AM - 6:00 PM<br>Sunday: Closed" data-lang-es="Lunes - Viernes: 9:00 AM - 9:00 PM<br>Sábado: 10:00 AM - 6:00 PM<br>Domingo: Cerrado">Monday - Friday: 9:00 AM - 9:00 PM<br>Saturday: 10:00 AM - 6:00 PM<br>Sunday: Closed</p>
                         </div>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <h3>Send us a Message</h3>
+                    <h3 data-lang-en="Send us a Message" data-lang-es="Envíanos un Mensaje">Send us a Message</h3>
                     <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <input type="text" id="name" name="name" data-lang-en="Your Name" data-lang-es="Tu Nombre" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <input type="email" id="email" name="email" data-lang-en="Your Email" data-lang-es="Tu Correo Electrónico" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" id="phone" name="phone" placeholder="Your Phone">
+                            <input type="tel" id="phone" name="phone" data-lang-en="Your Phone" data-lang-es="Tu Teléfono" placeholder="Your Phone">
                         </div>
                         <div class="form-group">
                             <select id="service" name="service" required>
-                                <option value="">Select an Option</option>
-                                <option value="enrollment">Student Enrollment</option>
-                                <option value="parent-inquiry">Parent Inquiry</option>
-                                <option value="school-partnership">School Partnership</option>
-                                <option value="schedule-info">Schedule Information</option>
-                                <option value="other">Other</option>
+                                <option value="" data-lang-en="Select an Option" data-lang-es="Selecciona una Opción">Select an Option</option>
+                                <option value="enrollment" data-lang-en="Student Enrollment" data-lang-es="Inscripción de Estudiante">Student Enrollment</option>
+                                <option value="parent-inquiry" data-lang-en="Parent Inquiry" data-lang-es="Consulta de Padre">Parent Inquiry</option>
+                                <option value="school-partnership" data-lang-en="School Partnership" data-lang-es="Asociación Escolar">School Partnership</option>
+                                <option value="schedule-info" data-lang-en="Schedule Information" data-lang-es="Información de Horarios">Schedule Information</option>
+                                <option value="other" data-lang-en="Other" data-lang-es="Otro">Other</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <textarea id="message" name="message" data-lang-en="Your Message" data-lang-es="Tu Mensaje" placeholder="Your Message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary" data-lang-en="Send Message" data-lang-es="Enviar Mensaje">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -120,31 +123,31 @@
     <!-- FAQ Section -->
     <section class="faq-section">
         <div class="container">
-            <h2>Frequently Asked Questions</h2>
+            <h2 data-lang-en="Frequently Asked Questions" data-lang-es="Preguntas Frecuentes">Frequently Asked Questions</h2>
             <div class="faq-grid">
                 <div class="faq-item">
-                    <h3>What age groups can participate?</h3>
-                    <p>Our program is designed for elementary school students, grades 3 and up. We make exceptions for 2nd grade students who have siblings in the program.</p>
+                    <h3 data-lang-en="What age groups can participate?" data-lang-es="¿Qué grupos de edad pueden participar?">What age groups can participate?</h3>
+                    <p data-lang-en="Our program is designed for elementary school students, grades 3 and up. We make exceptions for 2nd grade students who have siblings in the program." data-lang-es="Nuestro programa está diseñado para estudiantes de primaria, grados 3 en adelante. Hacemos excepciones para estudiantes de segundo grado que tienen hermanos en el programa.">Our program is designed for elementary school students, grades 3 and up. We make exceptions for 2nd grade students who have siblings in the program.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Do parents need to attend?</h3>
-                    <p>Parents are welcome and encouraged to attend classes with their children. This creates a supportive learning environment and allows families to learn together.</p>
+                    <h3 data-lang-en="Do parents need to attend?" data-lang-es="¿Los padres necesitan asistir?">Do parents need to attend?</h3>
+                    <p data-lang-en="Parents are welcome and encouraged to attend classes with their children. This creates a supportive learning environment and allows families to learn together." data-lang-es="Los padres son bienvenidos y alentados a asistir a las clases con sus hijos. Esto crea un ambiente de aprendizaje de apoyo y permite que las familias aprendan juntas.">Parents are welcome and encouraged to attend classes with their children. This creates a supportive learning environment and allows families to learn together.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>How often are the classes?</h3>
-                    <p>Classes meet twice per week, with each session lasting one hour. This schedule provides consistent learning while accommodating busy family schedules.</p>
+                    <h3 data-lang-en="How often are the classes?" data-lang-es="¿Con qué frecuencia son las clases?">How often are the classes?</h3>
+                    <p data-lang-en="Classes meet twice per week, with each session lasting one hour. This schedule provides consistent learning while accommodating busy family schedules." data-lang-es="Las clases se reúnen dos veces por semana, con cada sesión durando una hora. Este horario proporciona aprendizaje consistente mientras acomoda horarios familiares ocupados.">Classes meet twice per week, with each session lasting one hour. This schedule provides consistent learning while accommodating busy family schedules.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>What is the practice requirement?</h3>
-                    <p>Students are encouraged to practice 10-15 minutes each day. This includes finger exercises, tablature reading, and reviewing songs learned in class.</p>
+                    <h3 data-lang-en="What is the practice requirement?" data-lang-es="¿Cuál es el requisito de práctica?">What is the practice requirement?</h3>
+                    <p data-lang-en="Students are encouraged to practice 10-15 minutes each day. This includes finger exercises, tablature reading, and reviewing songs learned in class." data-lang-es="Se anima a los estudiantes a practicar de 10 a 15 minutos cada día. Esto incluye ejercicios de dedos, lectura de tablatura y revisión de canciones aprendidas en clase.">Students are encouraged to practice 10-15 minutes each day. This includes finger exercises, tablature reading, and reviewing songs learned in class.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Are there performance opportunities?</h3>
-                    <p>Yes! Students participate in weekly in-class performances and two public concerts per semester, showcasing their progress to the school community and families.</p>
+                    <h3 data-lang-en="Are there performance opportunities?" data-lang-es="¿Hay oportunidades de interpretación?">Are there performance opportunities?</h3>
+                    <p data-lang-en="Yes! Students participate in weekly in-class performances and two public concerts per semester, showcasing their progress to the school community and families." data-lang-es="¡Sí! Los estudiantes participan en presentaciones semanales en clase y dos conciertos públicos por semestre, mostrando su progreso a la comunidad escolar y las familias.">Yes! Students participate in weekly in-class performances and two public concerts per semester, showcasing their progress to the school community and families.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Is the instruction really bilingual?</h3>
-                    <p>Absolutely! All instruction is provided in both English and Spanish, making the program accessible to diverse families and promoting cultural appreciation.</p>
+                    <h3 data-lang-en="Is the instruction really bilingual?" data-lang-es="¿La instrucción es realmente bilingüe?">Is the instruction really bilingual?</h3>
+                    <p data-lang-en="Absolutely! All instruction is provided in both English and Spanish, making the program accessible to diverse families and promoting cultural appreciation." data-lang-es="¡Absolutamente! Toda la instrucción se proporciona tanto en inglés como en español, haciendo el programa accesible a familias diversas y promoviendo la apreciación cultural.">Absolutely! All instruction is provided in both English and Spanish, making the program accessible to diverse families and promoting cultural appreciation.</p>
                 </div>
             </div>
         </div>
@@ -156,29 +159,29 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>GTR Stepbridge</h3>
-                    <p>Bilingual guitar instruction for elementary school students.</p>
+                    <p data-lang-en="Bilingual guitar instruction for elementary school students." data-lang-es="Instrucción bilingüe de guitarra para estudiantes de primaria.">Bilingual guitar instruction for elementary school students.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4 data-lang-en="Quick Links" data-lang-es="Enlaces Rápidos">Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="program.html">Program</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="tuner.html">Tuner</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html" data-lang-en="Home" data-lang-es="Inicio">Home</a></li>
+                        <li><a href="program.html" data-lang-en="Program" data-lang-es="Programa">Program</a></li>
+                        <li><a href="about.html" data-lang-en="About" data-lang-es="Acerca de">About</a></li>
+                        <li><a href="tuner.html" data-lang-en="Tuner" data-lang-es="Afinador">Tuner</a></li>
+                        <li><a href="contact.html" data-lang-en="Contact" data-lang-es="Contacto">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Program Features</h4>
+                    <h4 data-lang-en="Program Features" data-lang-es="Características del Programa">Program Features</h4>
                     <ul>
-                        <li>Bilingual Instruction</li>
-                        <li>Weekly Classes</li>
-                        <li>Tablature Learning</li>
-                        <li>Performance Concerts</li>
+                        <li data-lang-en="Bilingual Instruction" data-lang-es="Instrucción Bilingüe">Bilingual Instruction</li>
+                        <li data-lang-en="Weekly Classes" data-lang-es="Clases Semanales">Weekly Classes</li>
+                        <li data-lang-en="Tablature Learning" data-lang-es="Aprendizaje de Tablatura">Tablature Learning</li>
+                        <li data-lang-en="Performance Concerts" data-lang-es="Conciertos de Interpretación">Performance Concerts</li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Follow Us</h4>
+                    <h4 data-lang-en="Follow Us" data-lang-es="Síguenos">Follow Us</h4>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -188,7 +191,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 GTR Stepbridge. All rights reserved.</p>
+                <p data-lang-en="&copy; 2024 GTR Stepbridge. All rights reserved." data-lang-es="&copy; 2024 GTR Stepbridge. Todos los derechos reservados.">&copy; 2024 GTR Stepbridge. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -18,6 +18,11 @@ const Tuner = function (a4) {
         "B",
     ];
 
+    // Don't automatically initialize - wait for user to click "Start Tuning!" button
+    // this.initGetUserMedia();
+};
+
+Tuner.prototype.startTuning = function () {
     this.initGetUserMedia();
 };
 
@@ -347,6 +352,7 @@ Application.prototype.start = function () {
         }
     };
 
+    self.tuner.startTuning();
     self.tuner.init();
     self.frequencyData = new Uint8Array(self.tuner.analyser.frequencyBinCount);
 
@@ -395,5 +401,39 @@ Application.prototype.update = function (note) {
 // Initialize the tuner when the page loads
 document.addEventListener('DOMContentLoaded', function() {
     const app = new Application();
-    app.start();
+    
+    // Don't start automatically - wait for user to click "Start Tuning!" button
+    const startTuningBtn = document.getElementById('startTuningBtn');
+    const tunerInterface = document.getElementById('tunerInterface');
+    
+    if (startTuningBtn) {
+        startTuningBtn.addEventListener('click', function() {
+            // Show loading state
+            const originalText = this.textContent;
+            this.textContent = 'Starting...';
+            this.disabled = true;
+            
+            // Hide the start section and show the tuner interface
+            this.parentElement.style.display = 'none';
+            tunerInterface.style.display = 'block';
+            
+            // Start the tuner application
+            try {
+                app.start();
+                
+                // Update button text to show it's active
+                this.textContent = 'Tuning Active';
+            } catch (error) {
+                console.error('Error starting tuner:', error);
+                // Show error message
+                alert('Error starting the tuner. Please check your microphone permissions and try again.');
+                
+                // Reset button state
+                this.textContent = originalText;
+                this.disabled = false;
+                this.parentElement.style.display = 'block';
+                tunerInterface.style.display = 'none';
+            }
+        });
+    }
 });
