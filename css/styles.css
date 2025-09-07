@@ -1341,43 +1341,42 @@ html {
 
 .precision-line-left {
     left: -80px;
-    top: 50%;
+    top: calc(50% - 1em);
     transform: translateY(-50%);
 }
 
 .precision-line-right-top {
     right: -80px;
-    top: 30%;
+    top: calc(30% + 1em);
 }
 
 .precision-line-right-bottom {
     right: -60px;
-    top: 70%;
+    top: calc(70% + 0.5em);
 }
 
-.precision-line-left .line,
-.precision-line-right-top .line,
+.precision-line-left .line {
+    width: 100px;
+    height: 2px;
+    background: #00bfc4;
+    position: relative;
+}
+
+.precision-line-right-top .line {
+    width: 100px;
+    height: 2px;
+    background: #00bfc4;
+    position: relative;
+}
+
 .precision-line-right-bottom .line {
-    width: 60px;
+    width: 80px;
     height: 2px;
     background: #00bfc4;
     position: relative;
 }
 
 .precision-line-left .line::after {
-    content: '';
-    position: absolute;
-    left: -5px;
-    top: -3px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 4px 8px 4px 0;
-    border-color: transparent #00bfc4 transparent transparent;
-}
-
-.precision-line-right-top .line::after,
-.precision-line-right-bottom .line::after {
     content: '';
     position: absolute;
     right: -5px;
@@ -1387,6 +1386,19 @@ html {
     border-style: solid;
     border-width: 4px 0 4px 8px;
     border-color: transparent transparent transparent #00bfc4;
+}
+
+.precision-line-right-top .line::after,
+.precision-line-right-bottom .line::after {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: -3px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 4px 8px 4px 0;
+    border-color: transparent #00bfc4 transparent transparent;
 }
 
 .precision-line-left .label,
@@ -1401,10 +1413,13 @@ html {
 }
 
 .precision-line-left .label {
-    left: 0;
+    left: -1.7em;
 }
 
-.precision-line-right-top .label,
+.precision-line-right-top .label {
+    right: -3.2em;
+}
+
 .precision-line-right-bottom .label {
     right: 0;
 }
@@ -1436,10 +1451,23 @@ html {
     }
     .precision-line-left {
         left: -60px;
+        top: calc(50% - 0.5em);
+    }
+    .precision-line-left .label {
+        left: -1.5em;
     }
     .precision-line-right-top,
     .precision-line-right-bottom {
         right: -60px;
+    }
+    .precision-line-right-top {
+        top: calc(30% + 1.5em);
+    }
+    .precision-line-right-top .label {
+        right: -2.7em;
+    }
+    .precision-line-right-bottom {
+        top: calc(70% + 1em);
     }
 }
 
@@ -1474,20 +1502,37 @@ html {
     .explanation-frequency {
         font-size: 0.8rem;
     }
-    .precision-line-left .line,
-    .precision-line-right-top .line,
+    .precision-line-left .line {
+        width: 60px;
+    }
+    .precision-line-right-top .line {
+        width: 60px;
+    }
     .precision-line-right-bottom .line {
-        width: 40px;
+        width: 50px;
     }
     .precision-line-left {
         left: -50px;
+        top: calc(50% - 0.2em);
+    }
+    .precision-line-left .label {
+        left: -1.2em;
+        font-size: 0.7rem;
     }
     .precision-line-right-top,
     .precision-line-right-bottom {
         right: -50px;
     }
-    .precision-line-left .label,
-    .precision-line-right-top .label,
+    .precision-line-right-top {
+        top: calc(30% + 1.8em);
+    }
+    .precision-line-right-top .label {
+        right: -2.2em;
+        font-size: 0.7rem;
+    }
+    .precision-line-right-bottom {
+        top: calc(70% + 1.3em);
+    }
     .precision-line-right-bottom .label {
         font-size: 0.7rem;
     }

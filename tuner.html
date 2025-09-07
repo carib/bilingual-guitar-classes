@@ -188,6 +188,63 @@
         </div>
     </section>
 
+    <!-- Functional Guitar Tuner -->
+    <section class="functional-tuner-section">
+        <div class="container">
+            <h2>Live Guitar Tuner</h2>
+            <div class="tuner-controls">
+                <button id="startTuner" class="btn btn-primary">
+                    <i class="fas fa-microphone"></i>
+                    Start Tuning
+                </button>
+                <button id="stopTuner" class="btn btn-secondary" style="display: none;">
+                    <i class="fas fa-stop"></i>
+                    Stop Tuning
+                </button>
+            </div>
+            
+            <div class="live-tuner-display" style="display: none;">
+                <div class="tuner-interface-live">
+                    <div class="tuner-screen-live">
+                        <!-- Semi-circular dial with needle -->
+                        <div class="tuner-dial-live">
+                            <div class="dial-arc-live">
+                                <div class="dial-markings">
+                                    <div class="marking sharp">♯</div>
+                                    <div class="marking center">0</div>
+                                    <div class="marking flat">♭</div>
+                                </div>
+                            </div>
+                            <div class="dial-needle-live" id="tunerNeedle"></div>
+                        </div>
+                        
+                        <!-- Note display -->
+                        <div class="note-display-live">
+                            <div class="detected-note" id="detectedNote">--</div>
+                            <div class="detected-frequency" id="detectedFrequency">-- Hz</div>
+                        </div>
+                        
+                        <!-- Tuning status -->
+                        <div class="tuning-status" id="tuningStatus">Ready to tune</div>
+                    </div>
+                </div>
+                
+                <!-- String selection -->
+                <div class="string-selection">
+                    <h3>Select String to Tune:</h3>
+                    <div class="string-buttons">
+                        <button class="string-btn" data-string="E2" data-freq="82.41">6/E₂</button>
+                        <button class="string-btn" data-string="A2" data-freq="110.00">5/A₂</button>
+                        <button class="string-btn" data-string="D3" data-freq="146.83">4/D₃</button>
+                        <button class="string-btn" data-string="G3" data-freq="196.00">3/G₃</button>
+                        <button class="string-btn" data-string="B3" data-freq="246.94">2/B₃</button>
+                        <button class="string-btn" data-string="E4" data-freq="329.63">1/E₄</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- String Frequency Guide -->
     <section class="frequency-guide">
         <div class="container">
