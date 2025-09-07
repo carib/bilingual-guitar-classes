@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Tuner - GTR Stepbridge</title>
+    <meta name="description" content="Digital guitar tuner with tuning instructions and string frequency guide. Learn how to tune your guitar properly with step-by-step instructions.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>GTR Stepbridge</h2>
+                <span class="nav-subtitle">Bilingual Guitar Instruction</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="program.html" class="nav-link">Program</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tuner.html" class="nav-link active">Tuner</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>The Digital Tuner</h1>
+            <h2>El Afinador Digital</h2>
+        </div>
+    </section>
+
+    <!-- Tuner Instructions -->
+    <section class="tuner-instructions">
+        <div class="container">
+            <div class="instructions-content">
+                <div class="instructions-text">
+                    <h3>Tuning Instructions</h3>
+                    <div class="instruction-steps">
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <p><strong>Tune one string at a time.</strong></p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <p><strong>BE SURE TO GRAB THE CORRECT TUNING PEG!</strong></p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <p><strong>Play the string repeatedly with your thumb.</strong></p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">4</span>
+                            <p><strong>Look for the correct <span class="highlight">STRING NAME</span> to appear on tuner display.</strong></p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">5</span>
+                            <p><strong>Each STRING NAME is followed by an <span class="highlight">OCTAVE NUMBER</span>.</strong></p>
+                            <p class="example">EXAMPLE: The Low E (string 6) has a small number 2 next to it.</p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">6</span>
+                            <p><strong>TURN TUNING PEG <span class="highlight">UP</span> or <span class="highlight">DOWN</span> to the correct <span class="highlight">Hz</span> number for that STRING.</strong></p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">7</span>
+                            <p><strong>Get the Hz as close as you can and go to the next string until you have tuned each string.</strong></p>
+                        </div>
+                        <div class="step">
+                            <span class="step-number">8</span>
+                            <p><strong><span class="highlight">DO IT AGAIN!</span></strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tuner-interface">
+                    <div class="tuner-display">
+                        <div class="tuner-circle">
+                            <div class="tuner-center">
+                                <h2>6/E<span class="octave">2</span></h2>
+                                <h3>= 82 Hz</h3>
+                            </div>
+                        </div>
+                        <div class="tuner-controls">
+                            <button class="tuner-btn" onclick="playString('E2', 82)">6/E2</button>
+                            <button class="tuner-btn" onclick="playString('A2', 110)">5/A2</button>
+                            <button class="tuner-btn" onclick="playString('D3', 147)">4/D3</button>
+                            <button class="tuner-btn" onclick="playString('G3', 196)">3/G3</button>
+                            <button class="tuner-btn" onclick="playString('B3', 247)">2/B3</button>
+                            <button class="tuner-btn" onclick="playString('E4', 330)">1/E4</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tuner Diagram Explanation -->
+    <section class="tuner-diagram-section">
+        <div class="container">
+            <div class="tuner-diagram-wrapper">
+                <div class="tuner-diagram-list left">
+                    <div>6/E<sub>2</sub> = 82 Hz</div>
+                    <div>5/A<sub>2</sub> = 110 Hz</div>
+                    <div>4/D<sub>3</sub> = 147 Hz</div>
+                </div>
+                <div class="tuner-diagram-center">
+                    <div class="tuner-diagram-label top">CLICK ON THIS TUNER</div>
+                    <svg viewBox="0 0 340 340" width="340" height="340" class="tuner-svg">
+                        <rect x="50" y="40" width="240" height="180" rx="22" fill="#f5f5f5" stroke="#222" stroke-width="3"/>
+                        <line x1="170" y1="120" x2="170" y2="60" stroke="#009ea0" stroke-width="4"/>
+                        <circle cx="170" cy="150" r="80" fill="#fff" stroke="#009ea0" stroke-width="3"/>
+                        <text x="170" y="160" text-anchor="middle" font-size="54" font-family="Inter, Arial, sans-serif" fill="#e74c3c" font-weight="bold">E<tspan font-size="32" dy="14">2</tspan></text>
+                        <text x="170" y="190" text-anchor="middle" font-size="26" font-family="Inter, Arial, sans-serif" fill="#222">82.3 Hz</text>
+                        <line x1="90" y1="150" x2="60" y2="220" stroke="#00bfc4" stroke-width="2"/>
+                        <line x1="170" y1="210" x2="170" y2="270" stroke="#00bfc4" stroke-width="2"/>
+                        <line x1="250" y1="150" x2="280" y2="220" stroke="#00bfc4" stroke-width="2"/>
+                        <circle cx="60" cy="220" r="4" fill="#00bfc4"/>
+                        <circle cx="170" cy="270" r="4" fill="#00bfc4"/>
+                        <circle cx="280" cy="220" r="4" fill="#00bfc4"/>
+                    </svg>
+                    <div class="tuner-diagram-labels-row compact">
+                        <div class="tuner-diagram-label left">STRING NAME</div>
+                        <div class="tuner-diagram-label right">OCTAVE NUMBER</div>
+                        <div class="tuner-diagram-label bottom">Hz</div>
+                    </div>
+                </div>
+                <div class="tuner-diagram-list right">
+                    <div>3/G<sub>2</sub> = 196 Hz</div>
+                    <div>2/B<sub>3</sub> = 247 Hz</div>
+                    <div>1/E<sub>4</sub> = 330 Hz</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- String Frequency Guide -->
+    <section class="frequency-guide">
+        <div class="container">
+            <h2>String Frequency Guide</h2>
+            <div class="frequency-table">
+                <div class="table-header">
+                    <div class="header-cell">String</div>
+                    <div class="header-cell">Note</div>
+                    <div class="header-cell">Octave</div>
+                    <div class="header-cell">Frequency (Hz)</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">6th String</div>
+                    <div class="table-cell">E</div>
+                    <div class="table-cell">2</div>
+                    <div class="table-cell">82 Hz</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">5th String</div>
+                    <div class="table-cell">A</div>
+                    <div class="table-cell">2</div>
+                    <div class="table-cell">110 Hz</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">4th String</div>
+                    <div class="table-cell">D</div>
+                    <div class="table-cell">3</div>
+                    <div class="table-cell">147 Hz</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">3rd String</div>
+                    <div class="table-cell">G</div>
+                    <div class="table-cell">3</div>
+                    <div class="table-cell">196 Hz</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">2nd String</div>
+                    <div class="table-cell">B</div>
+                    <div class="table-cell">3</div>
+                    <div class="table-cell">247 Hz</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell">1st String</div>
+                    <div class="table-cell">E</div>
+                    <div class="table-cell">4</div>
+                    <div class="table-cell">330 Hz</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- External Tuner Link -->
+    <section class="external-tuner">
+        <div class="container">
+            <div class="tuner-link-content">
+                <h2>Online Guitar Tuner</h2>
+                <p>For the best tuning experience, we recommend using an online guitar tuner with microphone access.</p>
+                <a href="https://guitar-tuner.app/" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-external-link-alt"></i>
+                    Open Online Tuner
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GTR Stepbridge</h3>
+                    <p>Bilingual guitar instruction for elementary school students.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="program.html">Program</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="tuner.html">Tuner</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Program Features</h4>
+                    <ul>
+                        <li>Bilingual Instruction</li>
+                        <li>Weekly Classes</li>
+                        <li>Tablature Learning</li>
+                        <li>Performance Concerts</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GTR Stepbridge. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+    <script>
+        // Simple audio context for string tones
+        let audioContext;
+        
+        function playString(note, frequency) {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+            oscillator.type = 'sine';
+            
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 2);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 2);
+        }
+        
+        // Update tuner display when buttons are clicked
+        document.querySelectorAll('.tuner-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const tunerCenter = document.querySelector('.tuner-center');
+                const text = this.textContent;
+                const [string, note] = text.split('/');
+                const octave = note.slice(-1);
+                const noteName = note.slice(0, -1);
+                
+                tunerCenter.innerHTML = `
+                    <h2>${string}/${noteName}<span class="octave">${octave}</span></h2>
+                    <h3>= ${getFrequency(note)} Hz</h3>
+                `;
+            });
+        });
+        
+        function getFrequency(note) {
+            const frequencies = {
+                'E2': 82,
+                'A2': 110,
+                'D3': 147,
+                'G3': 196,
+                'B3': 247,
+                'E4': 330
+            };
+            return frequencies[note] || 82;
+        }
+    </script>
+</body>
+</html> 
