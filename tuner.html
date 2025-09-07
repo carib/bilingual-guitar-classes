@@ -118,32 +118,67 @@
     <section class="tuner-diagram-section">
         <div class="container">
             <div class="tuner-diagram-wrapper">
+                <!-- Left side string frequencies -->
                 <div class="tuner-diagram-list left">
                     <div>6/E<sub>2</sub> = 82 Hz</div>
                     <div>5/A<sub>2</sub> = 110 Hz</div>
                     <div>4/D<sub>3</sub> = 147 Hz</div>
                 </div>
+                
+                <!-- Center tuner display -->
                 <div class="tuner-diagram-center">
                     <div class="tuner-diagram-label top">CLICK ON THIS TUNER</div>
-                    <svg viewBox="0 0 340 340" width="340" height="340" class="tuner-svg">
-                        <rect x="50" y="40" width="240" height="180" rx="22" fill="#f5f5f5" stroke="#222" stroke-width="3"/>
-                        <line x1="170" y1="120" x2="170" y2="60" stroke="#009ea0" stroke-width="4"/>
-                        <circle cx="170" cy="150" r="80" fill="#fff" stroke="#009ea0" stroke-width="3"/>
-                        <text x="170" y="160" text-anchor="middle" font-size="54" font-family="Inter, Arial, sans-serif" fill="#e74c3c" font-weight="bold">E<tspan font-size="32" dy="14">2</tspan></text>
-                        <text x="170" y="190" text-anchor="middle" font-size="26" font-family="Inter, Arial, sans-serif" fill="#222">82.3 Hz</text>
-                        <line x1="90" y1="150" x2="60" y2="220" stroke="#00bfc4" stroke-width="2"/>
-                        <line x1="170" y1="210" x2="170" y2="270" stroke="#00bfc4" stroke-width="2"/>
-                        <line x1="250" y1="150" x2="280" y2="220" stroke="#00bfc4" stroke-width="2"/>
-                        <circle cx="60" cy="220" r="4" fill="#00bfc4"/>
-                        <circle cx="170" cy="270" r="4" fill="#00bfc4"/>
-                        <circle cx="280" cy="220" r="4" fill="#00bfc4"/>
-                    </svg>
-                    <div class="tuner-diagram-labels-row compact">
-                        <div class="tuner-diagram-label left">STRING NAME</div>
-                        <div class="tuner-diagram-label right">OCTAVE NUMBER</div>
-                        <div class="tuner-diagram-label bottom">Hz</div>
+                    
+                    <!-- Main tuner interface -->
+                    <div class="tuner-interface-box">
+                        <div class="tuner-screen">
+                            <!-- Semi-circular dial with needle -->
+                            <div class="tuner-dial">
+                                <div class="dial-arc"></div>
+                                <div class="dial-needle"></div>
+                            </div>
+                            
+                            <!-- Note display -->
+                            <div class="note-display">
+                                <span class="note-option">D<sub>2</sub></span>
+                                <span class="note-current">E<sub>2</sub></span>
+                                <span class="note-option">F<sub>2</sub></span>
+                            </div>
+                            
+                            <!-- Frequency display -->
+                            <div class="frequency-display">82.3 Hz</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Connection line from tuner to explanation -->
+                    <div class="connection-line"></div>
+                    
+                    <!-- Explanation circle -->
+                    <div class="explanation-circle">
+                        <div class="explanation-content">
+                            <div class="explanation-note">E<sub>2</sub></div>
+                            <div class="explanation-frequency">82.3 Hz</div>
+                        </div>
+                        
+                        <!-- Precision lines with labels -->
+                        <div class="precision-lines">
+                            <div class="precision-line-left">
+                                <div class="line"></div>
+                                <div class="label">STRING NAME</div>
+                            </div>
+                            <div class="precision-line-right-top">
+                                <div class="line"></div>
+                                <div class="label">OCTAVE NUMBER</div>
+                            </div>
+                            <div class="precision-line-right-bottom">
+                                <div class="line"></div>
+                                <div class="label">Hz</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- Right side string frequencies -->
                 <div class="tuner-diagram-list right">
                     <div>3/G<sub>2</sub> = 196 Hz</div>
                     <div>2/B<sub>3</sub> = 247 Hz</div>

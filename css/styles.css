@@ -1130,11 +1130,12 @@ html {
     padding: 1rem 2rem;
 } 
 
-/* Tuner Diagram Section (tighter layout) */
+/* Tuner Diagram Section - Fresh Implementation */
 .tuner-diagram-section {
     padding: 3rem 0 1.5rem;
     background: #fff;
 }
+
 .tuner-diagram-wrapper {
     display: flex;
     align-items: flex-start;
@@ -1142,6 +1143,7 @@ html {
     gap: 2.2rem;
     flex-wrap: wrap;
 }
+
 .tuner-diagram-list {
     display: flex;
     flex-direction: column;
@@ -1152,67 +1154,259 @@ html {
     min-width: 120px;
     margin-top: 1.2rem;
 }
+
 .tuner-diagram-list.left {
     align-items: flex-end;
     text-align: right;
 }
+
 .tuner-diagram-list.right {
     align-items: flex-start;
     text-align: left;
 }
+
 .tuner-diagram-center {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.1rem;
+    gap: 1rem;
     min-width: 340px;
     max-width: 100vw;
     position: relative;
 }
+
 .tuner-diagram-label.top {
-    color: #009ea0;
+    color: #666;
     font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.5rem;
     background: none;
     box-shadow: none;
     padding: 0;
 }
-.tuner-svg {
-    display: block;
-    margin: 0 auto;
-    background: none;
-    max-width: 100%;
-    height: auto;
+
+/* Tuner Interface Box */
+.tuner-interface-box {
+    width: 240px;
+    height: 180px;
+    border: 3px solid #222;
+    border-radius: 22px;
+    background: #f5f5f5;
+    padding: 20px;
+    position: relative;
 }
-.tuner-diagram-labels-row {
+
+.tuner-screen {
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
     display: flex;
-    justify-content: space-between;
-    width: 340px;
-    margin: 0.02rem 0 0.02rem 0;
-    gap: 0.1rem;
-}
-.tuner-diagram-labels-row.compact {
-    display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    margin: 0.1rem 0 0 0;
+    justify-content: space-between;
 }
-.tuner-diagram-label.left,
-.tuner-diagram-label.right,
-.tuner-diagram-label.bottom {
-    position: static;
+
+/* Tuner Dial */
+.tuner-dial {
+    position: relative;
+    width: 80px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.dial-arc {
+    width: 80px;
+    height: 40px;
+    border: 2px solid #ccc;
+    border-bottom: none;
+    border-radius: 40px 40px 0 0;
+    position: relative;
+}
+
+.dial-arc::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    right: 10px;
+    height: 1px;
+    background: #ccc;
+}
+
+.dial-arc::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background: #ccc;
+}
+
+.dial-needle {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 2px;
+    height: 20px;
+    background: #000;
+    transform: translateX(-50%) rotate(-15deg);
+    transform-origin: bottom center;
+}
+
+/* Note Display */
+.note-display {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.note-option {
+    font-size: 1.2rem;
+    color: #999;
+    font-weight: 500;
+}
+
+.note-current {
+    font-size: 1.8rem;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Frequency Display */
+.frequency-display {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Connection Line */
+.connection-line {
+    width: 2px;
+    height: 40px;
+    background: #00bfc4;
+    margin: 10px 0;
+}
+
+/* Explanation Circle */
+.explanation-circle {
+    width: 120px;
+    height: 120px;
+    border: 3px solid #00bfc4;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+.explanation-content {
+    text-align: center;
+}
+
+.explanation-note {
+    font-size: 2rem;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.explanation-frequency {
     font-size: 1rem;
     color: #222;
-    background: #fff;
-    padding: 0.15em 0.5em;
-    border-radius: 1em;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     font-weight: 500;
+}
+
+/* Precision Lines */
+.precision-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     pointer-events: none;
+}
+
+.precision-line-left,
+.precision-line-right-top,
+.precision-line-right-bottom {
+    position: absolute;
+}
+
+.precision-line-left {
+    left: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.precision-line-right-top {
+    right: -80px;
+    top: 30%;
+}
+
+.precision-line-right-bottom {
+    right: -60px;
+    top: 70%;
+}
+
+.precision-line-left .line,
+.precision-line-right-top .line,
+.precision-line-right-bottom .line {
+    width: 60px;
+    height: 2px;
+    background: #00bfc4;
+    position: relative;
+}
+
+.precision-line-left .line::after {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: -3px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 4px 8px 4px 0;
+    border-color: transparent #00bfc4 transparent transparent;
+}
+
+.precision-line-right-top .line::after,
+.precision-line-right-bottom .line::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: -3px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 4px 0 4px 8px;
+    border-color: transparent transparent transparent #00bfc4;
+}
+
+.precision-line-left .label,
+.precision-line-right-top .label,
+.precision-line-right-bottom .label {
+    position: absolute;
+    top: -25px;
+    font-size: 0.8rem;
+    color: #222;
+    font-weight: 500;
     white-space: nowrap;
-    margin: 0;
+}
+
+.precision-line-left .label {
+    left: 0;
+}
+
+.precision-line-right-top .label,
+.precision-line-right-bottom .label {
+    right: 0;
 }
 @media (max-width: 900px) {
     .tuner-diagram-wrapper {
@@ -1226,30 +1420,76 @@ html {
         min-width: 0;
         margin-top: 0;
     }
-    .tuner-diagram-labels-row {
-        width: 220px;
-    }
     .tuner-diagram-center {
         min-width: 220px;
     }
+    .tuner-interface-box {
+        width: 200px;
+        height: 150px;
+    }
+    .explanation-circle {
+        width: 100px;
+        height: 100px;
+    }
+    .explanation-note {
+        font-size: 1.5rem;
+    }
+    .precision-line-left {
+        left: -60px;
+    }
+    .precision-line-right-top,
+    .precision-line-right-bottom {
+        right: -60px;
+    }
 }
+
 @media (max-width: 500px) {
     .tuner-diagram-center {
         min-width: 0;
     }
-    .tuner-svg {
-        width: 200px;
-        height: 200px;
+    .tuner-interface-box {
+        width: 180px;
+        height: 135px;
     }
-    .tuner-diagram-labels-row {
-        width: 140px;
-        font-size: 0.85rem;
+    .tuner-screen {
+        padding: 10px;
     }
-    .tuner-diagram-label.left, .tuner-diagram-label.right, .tuner-diagram-label.bottom {
-        font-size: 0.85rem;
+    .dial-arc {
+        width: 60px;
+        height: 30px;
     }
-    .tuner-diagram-label.top {
-        font-size: 0.95rem;
+    .note-current {
+        font-size: 1.5rem;
+    }
+    .note-option {
+        font-size: 1rem;
+    }
+    .explanation-circle {
+        width: 80px;
+        height: 80px;
+    }
+    .explanation-note {
+        font-size: 1.2rem;
+    }
+    .explanation-frequency {
+        font-size: 0.8rem;
+    }
+    .precision-line-left .line,
+    .precision-line-right-top .line,
+    .precision-line-right-bottom .line {
+        width: 40px;
+    }
+    .precision-line-left {
+        left: -50px;
+    }
+    .precision-line-right-top,
+    .precision-line-right-bottom {
+        right: -50px;
+    }
+    .precision-line-left .label,
+    .precision-line-right-top .label,
+    .precision-line-right-bottom .label {
+        font-size: 0.7rem;
     }
     .tuner-diagram-list {
         font-size: 1rem;
