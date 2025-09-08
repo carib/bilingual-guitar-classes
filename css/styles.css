@@ -657,9 +657,10 @@ body {
 }
 
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .contact-info h3,
@@ -692,6 +693,17 @@ body {
 .contact-item p {
     color: #666;
     line-height: 1.6;
+}
+
+.contact-item a {
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #3498db;
+    text-decoration: underline;
 }
 
 .contact-form {
@@ -850,8 +862,8 @@ body {
     }
 
     .contact-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        max-width: 100%;
+        padding: 0 1rem;
     }
 
     .services-grid {
