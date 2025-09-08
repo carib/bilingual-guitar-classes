@@ -1,0 +1,24 @@
+{
+  "name": "gtr-stepbridge-site",
+  "version": "1.0.0",
+  "description": "A modern, responsive website for GTR Stepbridge - Bilingual Guitar Instruction for Elementary Students.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carib/bilingual-guitar-classes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/carib/bilingual-guitar-classes/issues"
+  },
+  "homepage": "https://github.com/carib/bilingual-guitar-classes#readme",
+  "dependencies": {
+    "puppeteer": "^24.19.0"
+  }
+}
