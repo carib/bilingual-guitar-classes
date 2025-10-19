@@ -1,7 +1,7 @@
 {
   "name": "gtr-stepbridge-site",
   "version": "1.0.0",
-  "description": "A modern, responsive website for GTR Stepbridge - Bilingual Guitar Instruction for Elementary Students.",
+  "description": "A modern, responsive website for Santa Fe Guitar Online - Bilingual Guitar Instruction for Elementary Students.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

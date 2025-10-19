@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# GTR Stepbridge Website Build Script
+# Santa Fe Guitar Online Website Build Script
 # This script prepares the website for deployment
 
-echo "🚀 Building GTR Stepbridge Website..."
+echo "🚀 Building Santa Fe Guitar Online Website..."
 
 # Create build directory
 BUILD_DIR="build"
@@ -23,7 +23,7 @@ mkdir -p "$BUILD_DIR/assets/images"
 cat > "$BUILD_DIR/DEPLOYMENT.md" << EOF
 # Deployment Information
 
-This directory contains the built version of the GTR Stepbridge website.
+This directory contains the built version of the Santa Fe Guitar Online website.
 
 ## Files Included:
 - index.html - Main website file

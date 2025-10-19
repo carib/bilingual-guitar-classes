@@ -11,6 +11,7 @@ class LanguageManager {
     }
 
     setupLanguageToggle() {
+        // Handle regular language toggle buttons
         const langButtons = document.querySelectorAll('.lang-btn');
         langButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -18,6 +19,15 @@ class LanguageManager {
                 this.setLanguage(lang);
             });
         });
+
+        // Handle FAB language toggle button
+        const fabButton = document.getElementById('language-toggle-fab');
+        if (fabButton) {
+            fabButton.addEventListener('click', () => {
+                const newLang = this.currentLang === 'en' ? 'es' : 'en';
+                this.setLanguage(newLang);
+            });
+        }
     }
 
     setLanguage(lang) {
@@ -31,6 +41,12 @@ class LanguageManager {
                 btn.classList.add('active');
             }
         });
+
+        // Update FAB language toggle button text
+        const fabButton = document.getElementById('language-toggle-fab');
+        if (fabButton) {
+            fabButton.textContent = lang === 'en' ? 'Español' : 'English';
+        }
 
         // Update all elements with language data attributes
         document.querySelectorAll('[data-lang-en], [data-lang-es]').forEach(element => {
@@ -75,23 +91,37 @@ class LanguageManager {
     }
 }
 
-// Initialize language manager
-const languageManager = new LanguageManager();
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize language manager
+    const languageManager = new LanguageManager();
 
-// Mobile Navigation Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+    // Mobile Navigation Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', (e) => {
+        e.preventDefault();
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+}
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
     hamburger.classList.remove('active');
     navMenu.classList.remove('active');
 }));
+
+
+// Close mobile menu when clicking on the overlay
+navMenu.addEventListener('click', (e) => {
+    if (e.target === navMenu) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }
+});
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -358,4 +388,6 @@ const debouncedScrollHandler = debounce(() => {
     });
 }, 10);
 
-window.addEventListener('scroll', debouncedScrollHandler); 
+window.addEventListener('scroll', debouncedScrollHandler);
+
+}); // End of DOMContentLoaded 

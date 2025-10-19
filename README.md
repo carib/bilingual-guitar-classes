@@ -1,6 +1,6 @@
-# GTR Stepbridge Website
+# Santa Fe Guitar Online Website
 
-A modern, responsive website for GTR Stepbridge - Bilingual Guitar Instruction for Elementary Students.
+A modern, responsive website for Santa Fe Guitar Online - Bilingual Guitar Instruction for Elementary Students.
 
 ## Features
 
@@ -92,7 +92,7 @@ The main color scheme can be modified in `css/styles.css`:
 - Accent: `#667eea` to `#764ba2` (Gradient)
 
 ### Content
-- The content reflects the actual GTR Stepbridge program
+- The content reflects the actual Santa Fe Guitar Online program
 - Bilingual sections are clearly marked
 - Contact form options match program inquiries
 
@@ -131,7 +131,7 @@ Note: The form currently shows a success message but doesn't actually send data.
 
 ## License
 
-This website template is created for GTR Stepbridge. Feel free to modify and use for your own projects.
+This website template is created for Santa Fe Guitar Online. Feel free to modify and use for your own projects.
 
 ## Support
 
